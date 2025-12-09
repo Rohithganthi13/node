@@ -11,7 +11,8 @@ app.engine(
   "hbs",
   engine({
     extname: "hbs",
-    defaultLayout: null,
+    layoutsDir: "views/layouts",
+    defaultLayout: "main-layout",
   })
 );
 app.set("view engine", "hbs");
