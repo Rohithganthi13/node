@@ -1,29 +1,31 @@
 const Product = require("../models/product");
 
 exports.getAddProducts = (req, res, send) => {
-  res.render("add-product", {
+  res.render("admin/add-product", {
     pageTitle: "Add Product",
     path: "/admin/add-product",
     formsCSS: true,
-    
     productCSS: true,
     activeAddProduct: true,
   });
 };
 
 exports.postAddProduct = (req, res, next) => {
-  console.log("this is product page");
-  const product = new Product(req.body.title);
+  const title = req.body.title;
+  const description = req.body.description;
+  const price = req.body.price;
+  const imageUrl = req.body.imageUrl;
+  const product = new Product(title, description, price, imageUrl);
   product.save();
   res.redirect("/");
 };
 
 exports.getProducts = (req, res, next) => {
   Product.fetchAll((products) => {
-    res.render("shop", {
+    res.render("admin/products", {
       prods: products,
-      pageTitle: "Shop",
-      path: "/",
+      pageTitle: "Admin Products",
+      path: "/admin/products",
       hasProducts: products.length > 0,
       activeShop: true,
       productCSS: true,
