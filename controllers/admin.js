@@ -15,7 +15,7 @@ exports.postAddProduct = (req, res, next) => {
   const description = req.body.description;
   const price = req.body.price;
   const imageUrl = req.body.imageUrl;
-  const product = new Product(title, description, price, imageUrl);
+  const product = new Product(title, imageUrl, price, description);
   product.save();
   res.redirect("/");
 };
@@ -25,7 +25,7 @@ exports.getProducts = (req, res, next) => {
     res.render("admin/products", {
       prods: products,
       pageTitle: "Admin Products",
-      path: "/admin/products",
+      path: "admin/products",
       hasProducts: products.length > 0,
       activeShop: true,
       productCSS: true,

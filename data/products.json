@@ -1,1 +1,9 @@
-[{"title":"dfsdf","description":["dadasdas"],"price":"13.33"},{"title":"","description":["",""],"price":""}]
+[
+	{
+		"title": "Book",
+		"imageUrl": "https://www.publicdomainpictures.net/pictures/10000/velka/1-1210009435EGmE.jpg",
+		"description": "A Book",
+		"price": "20",
+		"id": "0.6965300513239074"
+	}
+]
