@@ -15,10 +15,18 @@
         >
       </li>
       <li class="main-header__item">
-        <a class="<%= path === '/cart' ? 'active' : '' %>" href="/cart">Cart</a>
+        <a
+          class="disabled-link <%= path === '/cart' ? 'active' : '' %>"
+          href="/cart"
+          aria-disabled="true"
+          >Cart</a
+        >
       </li>
       <li class="main-header__item">
-        <a class="<%= path === '/checkout' ? 'active' : '' %>" href="/checkout"
+        <a
+          class="disabled-link <%= path === '/checkout' ? 'active' : '' %>"
+          href="/checkout"
+          aria-disabled="true"
           >Checkout</a
         >
       </li>
